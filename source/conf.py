@@ -19,7 +19,7 @@ import time
 
 # -- Project information -----------------------------------------------------
 
-project = "The Red Developer's Guide"
+project = "Red Developer's Guide"
 copyright = f"2020-{time.strftime('%Y')}, Cog Creators"
 author = "Cog Creators"
 
