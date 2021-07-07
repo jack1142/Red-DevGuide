@@ -1,0 +1,22 @@
+name: Check spelling in documentation
+
+on: [push, pull_request]
+
+jobs:
+  check_doc_spelling:
+    name: Check spelling in documentation
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout repository
+      - uses: actions/checkout@v2
+
+      # Setup Python and install pre-commit
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+
+      # Run pre-commit
+      - name: Check spelling in documentation
+        run: |
+          make spelling
