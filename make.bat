@@ -14,6 +14,7 @@ set SOURCEDIR=source
 set BUILDDIR=build
 
 if "%1" == "bumpdeps" goto bumpdeps
+if "%1" == "compiledeps" goto compiledeps
 if "%1" == "" goto help
 
 call :ensurevenv
@@ -45,6 +46,8 @@ call :ensurevenv
 %SPHINXBUILD% -M help %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 echo.---
 echo.  bumpdeps    to bump dependencies in requirement files.
+echo.  compiledeps to update requirements.txt files to adhere to dependencies
+echo.              declared in requirements.in files (with minimal version changes).
 goto end
 
 :bumpdeps
@@ -52,11 +55,23 @@ call :ensurevenv
 echo.- Upgrading requirement files
 venv\Scripts\pip-compile --quiet --upgrade
 venv\Scripts\pip-compile --quiet --upgrade dev-requirements.in
+call :aftercompiledeps
+goto end
+
+:compiledeps
+call :ensurevenv
+echo.- Compiling requirement files
+venv\Scripts\pip-compile --quiet
+venv\Scripts\pip-compile --quiet dev-requirements.in
+call :aftercompiledeps
+goto end
+
+:aftercompiledeps
 venv\Scripts\pre-commit run mixed-line-ending --files requirements.txt dev-requirements.txt >nul
 git diff -U1 -- requirements.txt dev-requirements.txt
 echo.
 call :ensurevenv
-goto end
+goto :eof
 
 :end
 popd

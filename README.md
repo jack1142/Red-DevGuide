@@ -25,6 +25,12 @@ needed by this documentation.
 
 To update dependencies, run `make bumpdeps`.
 
+## Adding new build dependencies
+
+To add new build dependencies, add them to appropriate file (`requirements.in`
+for docs build requirements, `dev-requirements.in` for dev requirements) and
+run `make compiledeps` to automatically update `requirements.txt` appropriately.
+
 ## License
 
 See the [LICENSE file](LICENSE) for details.
