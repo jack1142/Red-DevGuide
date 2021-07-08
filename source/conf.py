@@ -32,6 +32,7 @@ author = "Cog Creators"
 extensions = [
     "sphinx_copybutton",
     "sphinx.ext.viewcode",
+    "sphinx_inline_tabs",
     "sphinx-prompt",
     "sphinxcontrib.spelling",
 ]
