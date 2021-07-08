@@ -5,7 +5,7 @@ setlocal
 pushd %~dp0
 
 if "%PYTHON%" == "" (
-	set PYTHON=py -3
+	set PYTHON=py -3.8
 )
 
 REM Command file for Sphinx documentation
