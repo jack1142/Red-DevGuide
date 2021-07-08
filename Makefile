@@ -46,6 +46,8 @@ bumpdeps: ensurevenv
 	venv/bin/pip-compile --quiet --upgrade
 	venv/bin/pip-compile --quiet --upgrade dev-requirements.in
 	-./venv/bin/pre-commit run mixed-line-ending --files requirements.txt dev-requirements.txt >/dev/null
+	git diff -U1 -- ./requirements.txt ./dev-requirements.txt
+	@echo
 	$(MAKE) ensurevenv
 
 # Catch-all target: route all unknown targets to Sphinx using the new

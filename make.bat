@@ -53,6 +53,8 @@ echo.- Upgrading requirement files
 venv\Scripts\pip-compile --quiet --upgrade
 venv\Scripts\pip-compile --quiet --upgrade dev-requirements.in
 venv\Scripts\pre-commit run mixed-line-ending --files requirements.txt dev-requirements.txt >nul
+git diff -U1 -- requirements.txt dev-requirements.txt
+echo.
 call :ensurevenv
 goto end
 
