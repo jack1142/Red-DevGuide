@@ -219,7 +219,7 @@ Making a release
    - Click on the first workflow run on the list.
    - Click on the "GO HERE BEFORE APPROVING" job.
    - Expand the "REVIEW OUTPUT OF THIS STEP BEFORE APPROVING" step.
-   - Verify the correctness of the release information printed in the step.
+   - **Verify the release information printed in the step is correct.**
    - Go back to Summary, click on "Review deployments" and approve or reject the environment run.
 
 #. Wait for the CI to finish its job.
