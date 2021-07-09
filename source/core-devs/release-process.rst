@@ -54,7 +54,8 @@ Making a release
    .. tab:: Hotfix release
 
       This is a hotfix release, you should focus on getting the critical fix out,
-      everything else should not be important.
+      the other PRs should not be important. However, you should still update the milestone
+      to make your and others' job easier later.
 
    .. tab:: Everything else
 
@@ -63,6 +64,13 @@ Making a release
       that should come after current one.
 
 #. Review changelog PR.
+
+   .. note::
+
+      At this point, you should have an up-to-date milestone containing all PRs
+      that are contained in this release. If you're not sure if all PRs are properly assigned,
+      you might find the ``=getunreleasedcommits MILESTONE_NAME`` bot command
+      in one of testing channels on Red server useful.
 
    .. tab:: Hotfix release
 
@@ -73,9 +81,11 @@ Making a release
 
    .. tab:: Everything else
 
-      Add (or ask PR author to add) any missing entries based on the release's milestone.
-      Verify that contributors list is complete and in alphabetical order.
-      Merge the PR once it's ready.
+      - Add (or ask PR author to add) any missing entries based on the release's milestone.
+      - Update the contributors list in the changelog using contributors list for the milestone
+        that you can generate using ``=getcontributors MILESTONE_NAME`` bot command
+        in one of testing channels on Red server.
+      - Merge the PR once it's ready.
 
 #. Run "Prepare Release" workflow.
 
