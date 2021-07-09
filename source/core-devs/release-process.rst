@@ -22,7 +22,7 @@ Types of releases
 
   Release without breaking changes that only contains cherry-picked enhancements and bugfixes.
 
-  As opposed to standard release, it is done from a short-lived release branch
+  Quite similar to a standard release but it is done from a short-lived release branch
   using the tag of a previous version as a base.
 
 - Hotfix release (``3.x.y+1``)
