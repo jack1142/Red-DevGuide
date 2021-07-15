@@ -15,8 +15,9 @@ help: ensurevenv
 	@echo "  bumpdeps    to bump dependencies in requirement files."
 	@echo "  compiledeps to update requirements.txt files to adhere to dependencies"
 	@echo "              declared in requirements.in files (with minimal version changes)."
+	@echo "  livehtml    to serve dirhtml documentation locally and auto-build on changes."
 
-.PHONY: help bumpdeps compiledeps ensurevenv Makefile
+.PHONY: help bumpdeps compiledeps ensurevenv livehtml Makefile
 
 # Note to whoever sees this in future:
 # Using indentation before `ensurevenv` lines breaks this target
@@ -60,6 +61,9 @@ aftercompiledeps:
 	git diff -U1 -- ./requirements.txt ./dev-requirements.txt
 	@echo
 	$(MAKE) ensurevenv
+
+livehtml: ensurevenv
+	./venv/bin/sphinx-autobuild -b dirhtml -d "$(BUILDDIR)/doctrees" "$(SOURCEDIR)" "$(BUILDDIR)/dirhtml" $(SPHINXOPTS) $(O)
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).

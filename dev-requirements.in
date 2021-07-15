@@ -4,3 +4,4 @@ flake8
 isort
 pip-tools
 pre-commit
+sphinx-autobuild

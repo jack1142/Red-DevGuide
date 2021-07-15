@@ -15,6 +15,7 @@ set BUILDDIR=build
 
 if "%1" == "bumpdeps" goto bumpdeps
 if "%1" == "compiledeps" goto compiledeps
+if "%1" == "livehtml" goto livehtml
 if "%1" == "" goto help
 
 call :ensurevenv
@@ -48,6 +49,7 @@ echo.---
 echo.  bumpdeps    to bump dependencies in requirement files.
 echo.  compiledeps to update requirements.txt files to adhere to dependencies
 echo.              declared in requirements.in files (with minimal version changes).
+echo.  livehtml    to serve dirhtml documentation locally and auto-build on changes.
 goto end
 
 :bumpdeps
@@ -64,6 +66,11 @@ echo.- Compiling requirement files
 venv\Scripts\pip-compile --quiet
 venv\Scripts\pip-compile --quiet dev-requirements.in
 call :aftercompiledeps
+goto end
+
+:livehtml
+call :ensurevenv
+venv\Scripts\sphinx-autobuild -b dirhtml -d %BUILDDIR%\doctrees %SOURCEDIR% %BUILDDIR%\dirhtml %SPHINXOPTS% %O%
 goto end
 
 :aftercompiledeps
