@@ -9,7 +9,7 @@ properly organize them, and minimize the time needed to work with and on them.
 Life cycle of an issue
 ----------------------
 
-.. figure:: images/triaging.svg
+.. figure:: /_images/triaging.svg
 
 #. The issue is waiting for triage (**Status: Needs Triage**)
 #. The issue has been tagged with category, type and other relevant labels
