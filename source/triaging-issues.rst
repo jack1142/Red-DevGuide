@@ -10,6 +10,7 @@ Life cycle of an issue
 ----------------------
 
 .. figure:: /_images/triaging.svg
+   :target: /_images/triaging.svg
 
 #. The issue is waiting for triage (**Status: Needs Triage**)
 #. The issue has been tagged with category, type and other relevant labels
