@@ -104,7 +104,7 @@ Making a release
 
    - Click on the "Run workflow" button in the popover
 
-   .. figure:: /images/prepare-release-workflow.png
+   .. figure:: /_images/prepare-release-workflow.png
 
 #. Merge the automatically created PRs.
 
@@ -184,7 +184,7 @@ Making a release
 
          Full changelog: https://docs.discord.red/en/latest/changelog_3_4_0.html#redbot-3-4-12-2021-06-17
 
-   .. figure:: /images/drafting-new-release.png
+   .. figure:: /_images/drafting-new-release.png
 
    .. _write-announcement:
 
