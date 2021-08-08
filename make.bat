@@ -19,25 +19,25 @@ if "%1" == "livehtml" goto livehtml
 if "%1" == "" goto help
 
 call :ensurevenv
-set SPHINXBUILD=venv\Scripts\sphinx-build
+set SPHINXBUILD=.venv\Scripts\sphinx-build
 
 echo.- Building documentation
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 goto end
 
 :ensurevenv
-if not exist venv (
+if not exist .venv (
 	echo.- Setting up the virtual environment
-	%PYTHON% -m venv venv
+	%PYTHON% -m venv .venv
 	echo.- Installing requirements into venv
-	venv\Scripts\python -m pip install -r requirements.txt -r dev-requirements.txt
+	.venv\Scripts\python -m pip install -r requirements.txt -r dev-requirements.txt
 	echo.
 	echo.- Installing pre-commit hook
-	venv\Scripts\pre-commit install
+	.venv\Scripts\pre-commit install
 	echo.
 ) else (
 	echo.- Synchronizing requirements in venv
-	venv\Scripts\python -m piptools sync requirements.txt dev-requirements.txt
+	.venv\Scripts\python -m piptools sync requirements.txt dev-requirements.txt
 	echo.
 )
 goto :eof
@@ -55,26 +55,26 @@ goto end
 :bumpdeps
 call :ensurevenv
 echo.- Upgrading requirement files
-venv\Scripts\pip-compile --quiet --upgrade
-venv\Scripts\pip-compile --quiet --upgrade dev-requirements.in
+.venv\Scripts\pip-compile --quiet --upgrade
+.venv\Scripts\pip-compile --quiet --upgrade dev-requirements.in
 call :aftercompiledeps
 goto end
 
 :compiledeps
 call :ensurevenv
 echo.- Compiling requirement files
-venv\Scripts\pip-compile --quiet
-venv\Scripts\pip-compile --quiet dev-requirements.in
+.venv\Scripts\pip-compile --quiet
+.venv\Scripts\pip-compile --quiet dev-requirements.in
 call :aftercompiledeps
 goto end
 
 :livehtml
 call :ensurevenv
-venv\Scripts\sphinx-autobuild -b dirhtml -d %BUILDDIR%\doctrees %SOURCEDIR% %BUILDDIR%\dirhtml %SPHINXOPTS% %O%
+.venv\Scripts\sphinx-autobuild -b dirhtml -d %BUILDDIR%\doctrees %SOURCEDIR% %BUILDDIR%\dirhtml %SPHINXOPTS% %O%
 goto end
 
 :aftercompiledeps
-venv\Scripts\pre-commit run mixed-line-ending --files requirements.txt dev-requirements.txt >nul
+.venv\Scripts\pre-commit run mixed-line-ending --files requirements.txt dev-requirements.txt >nul
 git diff -U1 -- requirements.txt dev-requirements.txt
 echo.
 call :ensurevenv
