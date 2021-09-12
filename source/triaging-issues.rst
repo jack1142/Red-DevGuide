@@ -50,13 +50,12 @@ Life cycle of an issue
 
 #. A contributor or org member wants to work on the issue
 
-   - If it is an org member, **Status: In Progress** label has been applied.
-   - If it is a contributor, the issue remains with its current status until PR is made.
+   The issue remains with its current status until PR is made.
 
 #. A PR addressing the issue has been made (**Status: PR Available**)
 
    The automation automatically updates the labels if the issue was marked with
-   **Status: Accepted - PRs Welcome** or **Status: In Progress** label.
+   **Status: Accepted - PRs Welcome** label.
 
    - If PR gets closed (not merged), the issue goes back to its previous **Status**.
    - If PR gets merged, the issue gets automatically closed by GitHub.
@@ -211,7 +210,8 @@ Author Feedback [T]_       The original author of the issue/PR needs to come bac
 
                            If this is an issue, it will be automatically commented on and labeled
                            with `No Activity <Keywords>` label after 4 days of inactivity,
-                           and closed after another 3 days of no activity.
+                           and closed with `Resolution: No Activity From Author <Resolution>`
+                           after another 3 days of no activity.
 
 Community Feedback         Indicates that we are interested in hearing more from our community
                            before continuing with this.
@@ -316,25 +316,29 @@ Resolution
 
 Describes why the issue was closed. Used for **all** closed issues and not actionable PRs.
 
-=====================   ===========================================================================
-Resolution              Description
-=====================   ===========================================================================
-Duplicate               There's another issue on the tracker that's pretty much the same thing.
+==============================   ==================================================================
+Resolution                       Description
+==============================   ==================================================================
+Duplicate                        There's another issue on the tracker that's
+                                 pretty much the same thing.
 
-External                For issues that are outside this codebase. Might be about
-                        the lack of support from Discord.
+External                         For issues that are outside this codebase. Might be about
+                                 the lack of support from Discord.
 
-Fix Committed [A]_      The fix is checked in, but it has not been released yet.
+Fix Committed [A]_               The fix is checked in, but it has not been released yet.
 
-Fix Released [A]_       The fix has been released.
+Fix Released [A]_                The fix has been released.
 
-No Repro                We couldn't get this to happen, or it stopped happening entirely.
+No Activity From Author [A]_     The issue needed a response from its author
+                                 but they did not respond.
 
-Won't Fix               It's supposed to be this way or we're not interested in fixing this.
-                        There's probably a good reason.
+No Repro                         We couldn't get this to happen, or it stopped happening entirely.
 
-Not Actionable          There is no action to be taken in response to this issue.
-=====================   ===========================================================================
+Won't Fix                        It's supposed to be this way or we're not interested
+                                 in fixing this. There's probably a good reason.
+
+Not Actionable                   There is no action to be taken in response to this issue.
+==============================   ==================================================================
 
 .. _Changelog-Entry:
 
