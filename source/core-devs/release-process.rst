@@ -72,6 +72,9 @@ Making a release
       you might find the ``=getunreleasedcommits MILESTONE_NAME`` bot command
       in one of testing channels on Red server useful.
 
+   The changelog PR should always be merged into ``V3/develop``. You should remember to later
+   cherry-pick/backport it to a proper branch if you're not making a release from ``V3/develop``.
+
    .. tab:: Hotfix release
 
       Hotfix releases need to contain a changelog.
@@ -129,7 +132,7 @@ Making a release
 
             git checkout -b V3/release/VERSION_TO_RELEASE_HERE PREVIOUS_VERSION
 
-      - Cherry-pick the critical fix, the automated PRs, and the version bump.
+      - Cherry-pick the critical fix, the changelog, the automated PRs, and the version bump.
       - Push the branch to upstream repository (Cog-Creators/Red-DiscordBot)
 
         With a typical setup where ``upstream`` remote points to upstream repository
@@ -150,7 +153,7 @@ Making a release
 
             git checkout -b V3/release/VERSION_TO_RELEASE_HERE PREVIOUS_VERSION
 
-      - Cherry-pick the relevant changes, the automated PRs, and the version bump.
+      - Cherry-pick the relevant changes, the changelog, the automated PRs, and the version bump.
       - Push the branch to upstream repository (Cog-Creators/Red-DiscordBot)
 
         With a typical setup where ``upstream`` remote points to upstream repository
