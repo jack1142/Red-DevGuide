@@ -93,11 +93,7 @@ the information that is indicated by labels already.
 Type
 ~~~~
 
-Describes the type of issue. Some issues might have multiple types, though it should be preferred
-to only label the issue with its main type(s).
-
-For example, a PR that adds a new functionality will most likely also update the documentation,
-but the PR should only be labeled with **Type: Feature** label.
+Describes the type of issue. Some issues might have multiple types.
 
 ======================= ======================================================================
 Type                    Description
@@ -108,11 +104,6 @@ Bug                     Unexpected behavior, result, or exception.
 Dependency Update       Adding/updating/removing some of Red's dependencies.
 
 Deprecation             This intends to deprecate some functionality.
-
-Docs                    Improvements to the docs (e.g. new topic, correction, etc.).
-
-                        Only used for issues and PRs that exclusively involve changes to
-                        the documentation.
 
 Enhancement             Something meant to enhance existing Red features.
 
@@ -130,8 +121,6 @@ Question                This is a support question.
                         to Red's support server at https://discord.gg/red
 
 Removal                 This intends to remove some functionality.
-
-Tests                   Used for issues/PRs that exclusively involve changes to the tests.
 ======================= ======================================================================
 
 .. _Category:
