@@ -12,6 +12,7 @@ REM Command file for Sphinx documentation
 
 set SOURCEDIR=source
 set BUILDDIR=build
+set SPHINXBUILD=.venv\Scripts\sphinx-build
 
 if "%1" == "bumpdeps" goto bumpdeps
 if "%1" == "compiledeps" goto compiledeps
@@ -19,7 +20,6 @@ if "%1" == "livehtml" goto livehtml
 if "%1" == "" goto help
 
 call :ensurevenv
-set SPHINXBUILD=.venv\Scripts\sphinx-build
 
 echo.- Building documentation
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
