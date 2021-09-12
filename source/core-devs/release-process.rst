@@ -228,10 +228,18 @@ Making a release
 
    Go to https://github.com/Cog-Creators/Red-DiscordBot/actions/workflows/publish_release.yml
 
-   - Click on the first workflow run on the list.
+   - Click on the first workflow run (with a clock icon) on the list.
+
+   .. figure:: /_images/publish-release-workflow-list.png
+      :target: /_images/publish-release-workflow-list.png
+
    - Click on the "GO HERE BEFORE APPROVING" job.
    - Expand the "REVIEW OUTPUT OF THIS STEP BEFORE APPROVING" step.
    - **Verify the release information printed in the step is correct.**
+
+   .. figure:: /_images/publish-release-job.png
+      :target: /_images/publish-release-job.png
+
    - Go back to Summary, click on "Review deployments" and approve or reject the environment run.
 
 #. Wait for the CI to finish its job.
