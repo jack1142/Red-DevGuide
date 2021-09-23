@@ -196,7 +196,7 @@ Making a release
 
             Full changelogs here: <https://docs.discord.red/en/stable/changelog_3_4_0.html#redbot-3-4-12-2021-06-17>
 
-#. Make a new release through GitHub Releases.
+#. Make a new release through `GitHub Releases <https://github.com/Cog-Creators/Red-DiscordBot/releases/new>`.
 
    .. attention::
 
