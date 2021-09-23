@@ -167,30 +167,6 @@ Making a release
 
       This does not apply.
 
-#. Make a new release through GitHub Releases.
-
-   .. attention::
-
-      Remember to change the target branch when you're not releasing from ``V3/develop``!
-
-   - Put the version number as tag name (i.e. ``3.4.0``)
-   - Put the version number prepended with "v" as release title (i.e. ``v3.4.0``)
-   - Ensure that the target branch is selected correctly
-   - Write a short release description
-
-     The description can be informal, the changelog has all the important information already.
-     Be sure to put a link to full changelog from our docs in release description.
-
-     The changelog link should point to the section for the specific release
-     (the part after ``#`` in the URL), e.g.:
-
-     .. code:: markdown
-
-         Full changelog: https://docs.discord.red/en/latest/changelog_3_4_0.html#redbot-3-4-12-2021-06-17
-
-   .. figure:: /_images/drafting-new-release.png
-      :target: /_images/drafting-new-release.png
-
    .. _write-announcement:
 
 #. Write (not send!) an announcement for the new release.
@@ -220,6 +196,30 @@ Making a release
 
             Full changelogs here: <https://docs.discord.red/en/stable/changelog_3_4_0.html#redbot-3-4-12-2021-06-17>
 
+#. Make a new release through GitHub Releases.
+
+   .. attention::
+
+      Remember to change the target branch when you're not releasing from ``V3/develop``!
+
+   - Put the version number as tag name (i.e. ``3.4.0``)
+   - Put the version number prepended with "v" as release title (i.e. ``v3.4.0``)
+   - Ensure that the target branch is selected correctly
+   - Write a short release description
+
+     The description can be informal, the changelog has all the important information already.
+     Be sure to put a link to full changelog from our docs in release description.
+
+     The changelog link should point to the section for the specific release
+     (the part after ``#`` in the URL), e.g.:
+
+     .. code:: markdown
+
+         Full changelog: https://docs.discord.red/en/latest/changelog_3_4_0.html#redbot-3-4-12-2021-06-17
+
+   .. figure:: /_images/drafting-new-release.png
+      :target: /_images/drafting-new-release.png
+
 #. Check the correctness of Release information and approve or reject the environment run.
 
    .. danger::
@@ -248,6 +248,7 @@ Making a release
 #. Wait for the CI to finish its job.
 
    "Publish Release" workflow needs to finish before you can continue.
+   You should also wait for the ``stable`` build on the Read The Docs to finish if it hasn't already.
 
    .. _publish-announcement:
 
