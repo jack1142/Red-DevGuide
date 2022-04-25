@@ -9,3 +9,5 @@ Full Table of Contents
 
 .. toctree::
    :maxdepth: 2
+
+   dependency-changes
